@@ -1,7 +1,7 @@
 ﻿
 using Connection_To_DataBaseCSharpe.DataBase;
 using Connection_To_DataBaseCSharpe.Models;
-
+// CORRIJA A CONEXÃO COM O SERVIDO NO SEU COMPUTADOR HOME
 internal class Program
 {
     private static void Main(string[] args)

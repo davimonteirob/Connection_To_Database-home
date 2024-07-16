@@ -45,13 +45,12 @@ namespace Connection_To_DataBaseCSharpe.Models
         public void AdicionarUsuario()
         {
             
-            //precisamos colocar um id no nosso usuario para facilitar a busca na list
-            Console.Clear();
+            
+            
             Console.WriteLine("## ADICIONAR USUÁRIO ##");
             Console.WriteLine("\n");
 
-            Console.WriteLine("Digite a posição do array");
-            int posiçao = Convert.ToInt32(Console.ReadLine());
+            
 
             Console.WriteLine("Digite o Nome: ");
             string nome = Console.ReadLine();
@@ -81,7 +80,8 @@ namespace Connection_To_DataBaseCSharpe.Models
 
             return;
 
-            //-----------------------------------------------------
+            //---------------------------------------------------
+
             Thread.Sleep(3000);
             Console.WriteLine("Dados do usuario adicionado com Sucesso!");
 

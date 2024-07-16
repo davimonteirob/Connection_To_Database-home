@@ -15,8 +15,8 @@ namespace Connection_To_DataBaseCSharpe.DataBase
  // voce também pode consultar em um site confiável um link string de connection confiável que ja funciona, apenas altere as opções importantes como id senha e nome.
          // Confira essas informações do string connection, como nome id e senha:
     {                                      //nome do servidor      Nome do Banco de Dados              Id do servidor e senha
-        private string connectionString = "Server=DESKTOP-KM1NEG8;Database=TestConnectionToDataBase;User Id=sa;Password=123456;\r\n";
-
+        private string connectionString = "Server=DESKTOP-KNM3SP8;Database=ConnectionToDataBaseCSharp;User Id=sa;Password=123456;\r\n";
+                                                 //use o server do sql local, observe se está igual ao servidor sql local
         //a função para usar o o link string para conectar o projeto com o banco de dados
         public SqlConnection ObterConexao()
         {
@@ -80,6 +80,7 @@ namespace Connection_To_DataBaseCSharpe.DataBase
             command.Parameters.AddWithValue("@Idade", usuario.Idade);
             command.Parameters.AddWithValue("@Endereço", usuario.Endereço);
             command.ExecuteNonQuery();
+            //comando execute para executar todas essas instrunções no data base
 
 
 
