@@ -36,27 +36,9 @@ internal class Program
 
         //o que vamos fazer agr é:
 
-        try
-        {
-            var connection = new Connection();
-            var listaUsuario = connection.ListarUsuarios();
-
-            foreach (var item in listaUsuario)
-            {
-                Console.WriteLine($" Nome: {item.Nome}, idade: {item.Idade}, Endereço: {item.Endereço}");
-            }
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine(ex.Message);
-        }
-
-        Console.WriteLine("\n");
-        Console.WriteLine("## Adicionando Usuário ##");
-        Console.WriteLine("\n");
 
 
-        user.AdicionarUsuario();
+
 
         user.Menu();
     }

@@ -15,7 +15,7 @@ namespace Connection_To_DataBaseCSharpe.DataBase
  // voce também pode consultar em um site confiável um link string de connection confiável que ja funciona, apenas altere as opções importantes como id senha e nome.
          // Confira essas informações do string connection, como nome id e senha:
     {                                      //nome do servidor      Nome do Banco de Dados              Id do servidor e senha
-        private string connectionString = "Server=DESKTOP-KNM3SP8;Database=ConnectionToDataBaseCSharp;User Id=sa;Password=123456;\r\n";
+        private string connectionString = "Data Source=DESKTOP-KNM3SP8;Initial Catalog=ConnectionToDataBaseCSharp;User ID=sa;Password=123456;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False";
                                                  //use o server do sql local, observe se está igual ao servidor sql local
         //a função para usar o o link string para conectar o projeto com o banco de dados
         public SqlConnection ObterConexao()
@@ -38,7 +38,7 @@ namespace Connection_To_DataBaseCSharpe.DataBase
             using var connection = ObterConexao();
             connection.Open(); //para abrir a nossa conexão
 
-            string sql = "SELECT * FROM Usuarios";
+            string sql = "SELECT * FROM Usuario";
 
 
             // agora que já temos o comando e a conexão para usar e consultar, devemos usar o nosso Objeto SqlCommand
@@ -58,7 +58,6 @@ namespace Connection_To_DataBaseCSharpe.DataBase
                 listaUsuario.Add(usuario01); //adicionamos o usuario012 que está recebendo a consultar do DataBase
 
                
-
             };
 
             //de acordo com o tipo de retorno do método, o valor a ser retornado deve ser uma lista (IEnumerable) do
@@ -73,7 +72,7 @@ namespace Connection_To_DataBaseCSharpe.DataBase
             using var connection = ObterConexao();
             connection.Open();
                                                                                // a funçãp do @, declarar uma variável
-            string query = "INSERT INTO Usuarios (Nome, Idade, Endereço) VALUES (@Nome, @Idade, @Endereço)";
+            string query = "INSERT INTO Usuario (Nome, Idade, Endereço) VALUES (@Nome, @Idade, @Endereço)";
             SqlCommand command = new SqlCommand(query,connection);
 
             command.Parameters.AddWithValue("@Nome", usuario.Nome); // funciona como: var @Nome = usuario.Nome;

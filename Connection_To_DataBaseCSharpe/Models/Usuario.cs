@@ -71,19 +71,21 @@ namespace Connection_To_DataBaseCSharpe.Models
                 var connection = new Connection();
                 
                 connection.AdicionarUsuario(usuario01);
-                
+                //ok, isso resolve.
+                Thread.Sleep(3000);
+                Console.WriteLine("Dados do usuario adicionado com Sucesso!");
+
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
 
-            return;
+           
 
             //---------------------------------------------------
 
-            Thread.Sleep(3000);
-            Console.WriteLine("Dados do usuario adicionado com Sucesso!");
+            
 
             Thread.Sleep(10000);
             Menu();
@@ -95,13 +97,21 @@ namespace Connection_To_DataBaseCSharpe.Models
             Console.Clear();
             Console.WriteLine("## EXIBIR USUARIOS ##");
             Console.WriteLine("\n");
-            foreach (var usuario in usuarios)
+
+            try
             {
-                Console.WriteLine(" - ");
-                Console.WriteLine($" Nome: {usuario.Nome}, Idade: {usuario.Idade}, Endereço {usuario.Endereço}. ");
-            };
-            Thread.Sleep(10000);
-            Menu();
+                var connection = new Connection();
+                var listaUsuario = connection.ListarUsuarios();
+
+                foreach (var item in listaUsuario)
+                {
+                    Console.WriteLine($" Nome: {item.Nome}, idade: {item.Idade}, Endereço: {item.Endereço}");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
             
         }
     }
